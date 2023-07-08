@@ -1,9 +1,10 @@
 -- Domains and Types
 CREATE DOMAIN dom_name VARCHAR(64);
+CREATE DOMAIN dom_descriptions VARCHAR(255);
 CREATE DOMAIN dom_email VARCHAR(64);
 CREATE DOMAIN dom_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
--- 1
+-- 1 ✅
 
 CREATE TABLE admins (
   admin_id INTEGER GENERATED ALWAYS AS IDENTITY,
@@ -27,7 +28,8 @@ CREATE TABLE categories (
 CREATE TABLE questions (
   category_id INTEGER,
   question_id INTEGER GENERATED ALWAYS AS IDENTITY,
-  description dom_name NOT NULL,
+  question_key dom_descriptions NOT NULL,
+  description dom_descriptions NOT NULL,
   PRIMARY KEY (category_id, question_id),
   CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES categories (category_id)
     ON UPDATE CASCADE
@@ -39,7 +41,7 @@ CREATE TABLE questions (
 CREATE TABLE quest_options (
   category_id INTEGER,
   question_id INTEGER,
-  option_id INTEGER GENERATED ALWAYS AS IDENTITY,
+  option_id INTEGER,
   description dom_name NOT NULL,
   value FLOAT NOT NULL,
   PRIMARY KEY (category_id, question_id, option_id),
@@ -74,7 +76,7 @@ CREATE TABLE careers_in_campus (
   PRIMARY KEY (career_id, campus_id)
 );
 
--- 8
+-- 8 🔁
 
 CREATE TABLE users (
   user_id INTEGER GENERATED ALWAYS AS IDENTITY,
@@ -92,7 +94,7 @@ CREATE TABLE users (
     ON DELETE RESTRICT
 );
 
--- 9
+-- 9 🔁
 
 CREATE TABLE answers (
   user_id INTEGER,
