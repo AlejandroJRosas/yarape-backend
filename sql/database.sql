@@ -1,3 +1,5 @@
+BEGIN;
+
 -- Domains and Types
 CREATE DOMAIN dom_name VARCHAR(64);
 CREATE DOMAIN dom_descriptions VARCHAR(255);
@@ -18,7 +20,7 @@ CREATE TABLE admins (
 -- 2
 
 CREATE TABLE categories (
-  category_id INTEGER GENERATED ALWAYS AS IDENTITY,
+  category_id INTEGER,
   description dom_name UNIQUE NOT NULL,
   PRIMARY KEY (category_id)
 );
@@ -27,7 +29,7 @@ CREATE TABLE categories (
 
 CREATE TABLE questions (
   category_id INTEGER,
-  question_id INTEGER GENERATED ALWAYS AS IDENTITY,
+  question_id INTEGER,
   question_key dom_descriptions NOT NULL,
   description dom_descriptions NOT NULL,
   PRIMARY KEY (category_id, question_id),
@@ -43,13 +45,12 @@ CREATE TABLE quest_options (
   question_id INTEGER,
   option_id INTEGER,
   description dom_name NOT NULL,
-  value FLOAT NOT NULL,
+  amount FLOAT NOT NULL,
   PRIMARY KEY (category_id, question_id, option_id),
   CONSTRAINT fk_questions_id FOREIGN KEY (category_id, question_id) 
     REFERENCES questions (category_id, question_id) 
     ON UPDATE CASCADE 
-    ON DELETE RESTRICT,
-  CONSTRAINT chk_value CHECK (value >= 0)
+    ON DELETE RESTRICT
 );
 
 -- 5
@@ -110,3 +111,5 @@ CREATE TABLE answers (
     ON UPDATE CASCADE 
     ON DELETE RESTRICT
 );
+
+COMMIT;
