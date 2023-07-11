@@ -12,9 +12,9 @@ import { deleteUser } from '../../controllers/users/delete.action'
 const router = Router()
 
 /* eslint-disable @typescript-eslint/no-misused-promises */
-router.get('/', tokenGuard(), verifyToken(), paginationGuard(), getUsers)
-router.get('/:userId', tokenGuard(), verifyToken(), getUserById)
-router.post('/', tokenGuard(), verifyToken(), schemaGuard(usersSchema), addUser)
+router.get('/', paginationGuard(), getUsers)
+router.get('/:userId', getUserById)
+router.post('/', schemaGuard(usersSchema), addUser)
 router.delete('/:userId', tokenGuard(), verifyToken(), deleteUser)
 
 export default router
