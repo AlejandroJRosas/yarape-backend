@@ -1,4 +1,4 @@
--- admins
+-- admins ✅
 
 INSERT INTO admins (
   name,
@@ -8,7 +8,7 @@ INSERT INTO admins (
   ('Luís Gonzales', 'luisgonzalezsalazar03@gmail.com', '1234'),
   ('Alejandro Rosas', 'alejandrojrosas2001@gmail.com', '1234');
 
--- categories 🌱
+-- categories ✅
 
 INSERT INTO categories (
   category_id,
@@ -22,7 +22,7 @@ INSERT INTO categories (
   (6, 'Producción de residuos'),
   (7, 'Energía');
 
--- questions 🌱
+-- questions ✅
 
 INSERT INTO questions (
   category_id,
@@ -59,7 +59,7 @@ INSERT INTO questions (
   (7, 1, 'tienesBombillosAhorradoresEnCasa', '¿Tienes bombillos ahorradores en tu casa?'),
   (7, 2, 'cuantasHorasUsasElAire', '¿Cuántas horas usas el aire acondicionado al día?');
 
--- quest_options 🌱
+-- quest_options ✅
 
 INSERT INTO quest_options (
   category_id,
@@ -155,7 +155,7 @@ INSERT INTO quest_options (
   (7, 2, 3, '+7hrs', 2352),
   (7, 2, 4, 'No uso AC', 0);
 
--- campus
+-- campus ✅
 
 INSERT INTO campus (
   name
@@ -163,7 +163,7 @@ INSERT INTO campus (
   ('guayana'),
   ('caracas');
 
--- careers
+-- careers ✅
 
 INSERT INTO careers (
   name
@@ -186,7 +186,7 @@ INSERT INTO careers (
   ('Arquitectura'),
   ('Teología');
 
--- careers_in_campus
+-- careers_in_campus ✅
 
 INSERT INTO careers_in_campus (
   career_id, 
