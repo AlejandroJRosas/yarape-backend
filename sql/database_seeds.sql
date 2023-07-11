@@ -212,21 +212,21 @@ INSERT INTO careers_in_campus (
 
 -- users 🌱
 
-INSERT INTO users (
-  name,
-  is_ucab_member,
-  campus_id,
-  role,
-  career_id
-) VALUES
-  ();
+-- INSERT INTO users (
+--   name,
+--   is_ucab_member,
+--   campus_id,
+--   role,
+--   career_id
+-- ) VALUES
+--   ();
 
 -- answers 🌱
 
-INSERT INTO answers (
-  user_id,
-  category_id,
-  question_id,
-  option_id
-) VALUES
-  ();
+-- INSERT INTO answers (
+--   user_id,
+--   category_id,
+--   question_id,
+--   option_id
+-- ) VALUES
+--   ();

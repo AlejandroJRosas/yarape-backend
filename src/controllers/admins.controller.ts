@@ -25,11 +25,27 @@ export const getAdmins = async (
     }
 
     const { rows } = await pool.query({
-      text: 'SELECT COUNT(*) FROM admins'
+      text: `
+        SELECT 
+          COUNT(*) 
+        FROM 
+          admins
+      `
     })
 
     const response = await pool.query({
-      text: 'SELECT admin_id, name, email FROM admins ORDER BY name LIMIT $1 OFFSET $2',
+      text: `
+        SELECT 
+          admin_id, 
+          name, 
+          email 
+        FROM 
+          admins 
+        ORDER BY 
+          name 
+        LIMIT 
+          $1 OFFSET $2
+      `,
       values: [size, offset]
     })
     const pagination: PaginateSettings = {
@@ -49,7 +65,16 @@ export const getAdminById = async (
 ): Promise<Response> => {
   try {
     const response = await pool.query({
-      text: 'SELECT admin_id, name, email FROM admins WHERE admin_id = $1',
+      text: `
+        SELECT 
+          admin_id, 
+          name, 
+          email 
+        FROM 
+          admins 
+        WHERE 
+          admin_id = $1
+      `,
       values: [req.params.adminId]
     })
     if (response.rowCount === 0) {
@@ -79,12 +104,24 @@ export const addAdmin = async (
     const newAdmin = await getAdminsDataFromRequestBody(req)
 
     const insertar = await pool.query({
-      text: 'INSERT INTO admins (name, email, password) VALUES ($1, $2, $3) RETURNING admin_id',
+      text: `
+        INSERT INTO admins (name, email, password) 
+        VALUES 
+          ($1, $2, $3) 
+        RETURNING admin_id
+      `,
       values: newAdmin
     })
     const insertedId: string = insertar.rows[0].admin_id
     const response = await pool.query({
-      text: 'SELECT * FROM admins WHERE admin_id = $1',
+      text: `
+        SELECT 
+          * 
+        FROM 
+          admins 
+        WHERE 
+          admin_id = $1
+      `,
       values: [insertedId]
     })
     return res.status(STATUS.CREATED).json(camelizeObject(response.rows[0]))
@@ -101,7 +138,16 @@ export const updateAdmin = async (
     const updatedAdmin = await getAdminsDataFromRequestBody(req)
     updatedAdmin.push(req.params.adminId)
     const response = await pool.query({
-      text: 'UPDATE admins SET name = $1, email = $2, password = $3 WHERE admin_id = $4',
+      text: `
+        UPDATE 
+          admins 
+        SET 
+          name = $1, 
+          email = $2, 
+          password = $3 
+        WHERE 
+          admin_id = $4
+      `,
       values: updatedAdmin
     })
     if (response.rowCount === 0) {
@@ -122,7 +168,12 @@ export const deleteAdmin = async (
 ): Promise<Response> => {
   try {
     const response = await pool.query({
-      text: 'DELETE FROM admins WHERE admin_id = $1',
+      text: `
+        DELETE FROM 
+          admins 
+        WHERE 
+          admin_id = $1
+      `,
       values: [req.params.adminId]
     })
     if (response.rowCount === 0) {
