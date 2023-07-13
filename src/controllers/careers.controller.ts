@@ -9,7 +9,7 @@ export const getAllCareers = async (
   res: Response
 ): Promise<Response> => {
   try {
-    const response = await pool.query({
+    const { rows: responseCareers } = await pool.query({
       text: `
       SELECT 
         c.career_id AS id, 
@@ -27,7 +27,12 @@ export const getAllCareers = async (
         c.name;
       `
     })
-    return res.status(STATUS.OK).json(camelizeObject(response.rows))
+    const arr = responseCareers.map((row) => ({
+      id: row.id,
+      name: row.name,
+      campus: row.campus.replace(/[{}]/g, '').split(',')
+    }))
+    return res.status(STATUS.OK).json(camelizeObject(arr))
   } catch (error: unknown) {
     return handleControllerError(error, res)
   }
