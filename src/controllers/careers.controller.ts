@@ -2,7 +2,6 @@ import { Request, Response } from 'express'
 import { pool } from '../database'
 import { STATUS } from '../utils/constants'
 import { handleControllerError } from '../utils/responses/handleControllerError'
-import camelizeObject from '../utils/camelizeObject'
 
 export const getAllCareers = async (
   _req: Request,
@@ -27,13 +26,15 @@ export const getAllCareers = async (
         c.name;
       `
     })
+    console.log(responseCareers)
     const arr = responseCareers.map((row) => ({
       id: row.id,
       name: row.name,
       campus: row.campus.replace(/[{}]/g, '').split(',')
     }))
-    return res.status(STATUS.OK).json(camelizeObject(arr))
+    return res.status(STATUS.OK).json(arr)
   } catch (error: unknown) {
+    console.log(error)
     return handleControllerError(error, res)
   }
 }

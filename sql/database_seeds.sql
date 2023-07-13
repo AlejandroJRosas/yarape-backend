@@ -19,7 +19,7 @@ INSERT INTO categories (
   (3, 'Alimentos'),
   (4, 'Agua'),
   (5, 'Compras'),
-  (6, 'Producción de residuos'),
+  (6, 'Producción de Residuos'),
   (7, 'Energía');
 
 -- questions ✅

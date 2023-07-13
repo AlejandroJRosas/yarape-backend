@@ -64,7 +64,6 @@ export const getAllQuestions = async (
             }))
         }))
     }))
-    console.log(responseOptions)
     return res.status(STATUS.OK).json(camelizeObject(result))
   } catch (error: unknown) {
     return handleControllerError(error, res)
