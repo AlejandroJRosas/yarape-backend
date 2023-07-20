@@ -1,3 +1,20 @@
+-- Carácteres de español que dan problemas 
+-- al hacer inserción directa
+
+-- Carácter || Correspondiente en Postgres
+-- á || ß 
+-- é || Ú
+-- í || Ý
+-- ó || ¾
+-- ú || ·
+-- Á || ┴
+-- É || ╔
+-- Í || ═
+-- Ó || Ë
+-- Ú || ┌
+-- ñ || ±
+-- ¿ || ┐
+
 -- admins ✅
 
 INSERT INTO admins (
@@ -5,8 +22,8 @@ INSERT INTO admins (
   email,
   password
 ) VALUES
-  ('Luís Gonzales', 'luisgonzalezsalazar03@gmail.com', '1234'),
-  ('Alejandro Rosas', 'alejandrojrosas2001@gmail.com', '1234');
+  ('LuÝs Gonzales', 'luisgonzalezsalazar03@gmail.com', '$2b$10$uCAyTLRklMt/MbuGmrwRq.xE.8Wjlwio5K7H8CwIh00rYsf36UuSi'),
+  ('Alejandro Rosas', 'alejandrojrosas2001@gmail.com', '$2b$10$uCAyTLRklMt/MbuGmrwRq.xE.8Wjlwio5K7H8CwIh00rYsf36UuSi');
 
 -- categories ✅
 
@@ -19,8 +36,8 @@ INSERT INTO categories (
   (3, 'Alimentos'),
   (4, 'Agua'),
   (5, 'Compras'),
-  (6, 'Producción de Residuos'),
-  (7, 'Energía');
+  (6, 'Producci¾n de Residuos'),
+  (7, 'EnergÝa');
 
 -- questions ✅
 
@@ -31,33 +48,33 @@ INSERT INTO questions (
   description
 ) VALUES
   -- Categoria Vivienda
-  (1, 1, 'enQueCasaVives', '¿En qué tipo de casa vives?'),
+  (1, 1, 'enQueCasaVives', '┐En quÚ tipo de casa vives?'),
   (1, 2, 'livingSize', 'La casa en la que vives es:'),
-  (1, 3, 'personasQueHabitan', '¿Cuántas personas habitan la vivienda?'),
+  (1, 3, 'personasQueHabitan', '┐Cußntas personas habitan la vivienda?'),
   -- Caregoria Transporte
-  (2, 1, 'transportMethod', '¿Qué medio frecuentas para trasladarte?'),
-  (2, 2, 'isElectrical', '¿Es un vehículo eléctrico?'),
-  (2, 3, 'quantityPeopleTransport', '¿Sueles llevar a personas en tu vehículo?'),
-  (2, 4, 'distanceHouse', '¿Qué tanto recorres diariamente en tu medio de transporte?'),
-  (2, 5, 'fliesYear', '¿Cuántas veces realizas viajes en avión al año?'),
+  (2, 1, 'transportMethod', '┐QuÚ medio frecuentas para trasladarte?'),
+  (2, 2, 'isElectrical', '┐Es un vehÝculo elÚctrico?'),
+  (2, 3, 'quantityPeopleTransport', '┐Sueles llevar a personas en tu vehÝculo?'),
+  (2, 4, 'distanceHouse', '┐QuÚ tanto recorres diariamente en tu medio de transporte?'),
+  (2, 5, 'fliesYear', '┐Cußntas veces realizas viajes en avi¾n al a±o?'),
   -- Categoria Alimentos
-  (3, 1, 'enQueSeBasaTuDieta', '¿En qué se basa tu dieta común?'),
-  (3, 2, 'tipoDeCarneFrecuente', '¿Qué tipo de carne sueles consumir?'),
-  (3, 3, 'consumesCarneDiario', '¿Consumes carnes diariamente?'),
-  (3, 4, 'consumesComidaImportada', '¿Consumes alimentos importados?'),
+  (3, 1, 'enQueSeBasaTuDieta', '┐En quÚ se basa tu dieta com·n?'),
+  (3, 2, 'tipoDeCarneFrecuente', '┐QuÚ tipo de carne sueles consumir?'),
+  (3, 3, 'consumesCarneDiario', '┐Consumes carnes diariamente?'),
+  (3, 4, 'consumesComidaImportada', '┐Consumes alimentos importados?'),
   -- Categoria Agua
-  (4, 1, 'usasLosBanosDeUniversidad', '¿Cuántas veces vas al baño al día?'),
-  (4, 2, 'usasLosFiltrosDeLaUniversidad', '¿Cuánto tiempo te tomas al ducharte?'),
+  (4, 1, 'usasLosBanosDeUniversidad', '┐Cußntas veces vas al ba±o al dÝa?'),
+  (4, 2, 'usasLosFiltrosDeLaUniversidad', '┐Cußnto tiempo te tomas al ducharte?'),
   -- Categoria Compras
   (5, 1, 'vestimentaComun', 'Tu vestimenta comun es:'),
-  (5, 2, 'tuRopaEsImportada', '¿Tu ropa es importada?'),
+  (5, 2, 'tuRopaEsImportada', '┐Tu ropa es importada?'),
   -- Categoria Produccion de residuos
-  (6, 1, 'usasCuadernosReciclados', '¿Usas productos reciclados?'),
-  (6, 2, 'comprasProductosQueVenganEnPlastico', '¿Compras productos que vengan en envases plásticos?'),
-  (6, 3, 'tuReutilizasLosProductos', '¿Reutilizas esos envases?'),
+  (6, 1, 'usasCuadernosReciclados', '┐Usas productos reciclados?'),
+  (6, 2, 'comprasProductosQueVenganEnPlastico', '┐Compras productos que vengan en envases plßsticos?'),
+  (6, 3, 'tuReutilizasLosProductos', '┐Reutilizas esos envases?'),
   -- Categoria Energia
-  (7, 1, 'tienesBombillosAhorradoresEnCasa', '¿Tienes bombillos ahorradores en tu casa?'),
-  (7, 2, 'cuantasHorasUsasElAire', '¿Cuántas horas usas el aire acondicionado al día?');
+  (7, 1, 'tienesBombillosAhorradoresEnCasa', '┐Tienes bombillos ahorradores en tu casa?'),
+  (7, 2, 'cuantasHorasUsasElAire', '┐Cußntas horas usas el aire acondicionado al dÝa?');
 
 -- quest_options ✅
 
@@ -73,7 +90,7 @@ INSERT INTO quest_options (
   (1, 1, 1, 'Apartamento', 237),
   (1, 1, 2, 'Casa / Townhouse', 1),
   -- Pregunta 2
-  (1, 2, 1, 'Casa pequeña (2 habitaciones)', 1700),
+  (1, 2, 1, 'Casa peque±a (2 habitaciones)', 1700),
   (1, 2, 2, 'Casa mediana (3 - 4 habitaciones)', 3400),
   (1, 2, 3, 'Casa grande (+5 habitaciones)', 5000),
   -- Pregunta 3
@@ -168,23 +185,23 @@ INSERT INTO campus (
 INSERT INTO careers (
   name
 ) VALUES
-  ('Administración de Empresas'),
-  ('Contaduría Pública'),
+  ('Administraci¾n de Empresas'),
+  ('ContadurÝa P·blica'),
   ('Relaciones Industriales'),
-  ('Sociología'),
-  ('Economía'),
+  ('SociologÝa'),
+  ('EconomÝa'),
   ('Derecho'),
   ('Letras'),
-  ('Psicología'),
-  ('Filosofía'),
-  ('Educación'),
-  ('Comunicación Social'),
-  ('Ingeniería en Telecomunicaciones'),
-  ('Ingeniería Civil'),
-  ('Ingeniería Industrial'),
-  ('Ingeniería Informática'),
+  ('PsicologÝa'),
+  ('FilosofÝa'),
+  ('Educaci¾n'),
+  ('Comunicaci¾n Social'),
+  ('IngenierÝa en Telecomunicaciones'),
+  ('IngenierÝa Civil'),
+  ('IngenierÝa Industrial'),
+  ('IngenierÝa Informßtica'),
   ('Arquitectura'),
-  ('Teología');
+  ('TeologÝa');
 
 -- careers_in_campus ✅
 
@@ -212,21 +229,44 @@ INSERT INTO careers_in_campus (
 
 -- users 🌱
 
--- INSERT INTO users (
---   name,
---   is_ucab_member,
---   campus_id,
---   role,
---   career_id
--- ) VALUES
---   ();
+INSERT INTO users (
+  name,
+  is_ucab_member,
+  footprint,
+  campus_id,
+  role,
+  career_id
+) VALUES
+  ('Jhonny Suarez', false, 6.78, null, null, null),
+  ('Jes·s Ortiz', true, 6.35, 1, 'E', 14);
 
 -- answers 🌱
 
--- INSERT INTO answers (
---   user_id,
---   category_id,
---   question_id,
---   option_id
--- ) VALUES
---   ();
+INSERT INTO answers (
+  user_id,
+  category_id,
+  question_id,
+  option_id
+) VALUES
+  -- Jhonny Suarez 
+  (1, 1, 1, 1),
+  (1, 1, 2, 2),
+  (1, 1, 3, 3),
+  (1, 2, 1, 1),
+  (1, 2, 2, 2),
+  (1, 2, 3, 1),
+  (1, 2, 4, 2),
+  (1, 2, 5, 1),
+  (1, 3, 1, 2),
+  (1, 3, 2, 1),
+  (1, 3, 3, 1),
+  (1, 3, 4, 1),
+  (1, 4, 1, 3),
+  (1, 4, 2, 4),
+  (1, 5, 1, 1),
+  (1, 5, 2, 1),
+  (1, 6, 1, 1),
+  (1, 6, 2, 1),
+  (1, 6, 3, 2),
+  (1, 7, 1, 1),
+  (1, 7, 2, 3);

@@ -26,7 +26,6 @@ export const getAllCareers = async (
         c.name;
       `
     })
-    console.log(responseCareers)
     const arr = responseCareers.map((row) => ({
       id: row.id,
       name: row.name,
@@ -34,7 +33,6 @@ export const getAllCareers = async (
     }))
     return res.status(STATUS.OK).json(arr)
   } catch (error: unknown) {
-    console.log(error)
     return handleControllerError(error, res)
   }
 }

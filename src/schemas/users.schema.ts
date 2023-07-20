@@ -15,14 +15,17 @@ export const usersSchema = z
       .number()
       .min(1, 'El id de campus debe ser mínimo 1')
       .max(2, 'El id de campus debe ser máximo 2')
-      .optional(), // hacer opcional el campusId
+      .optional() // hacer opcional el campusId
+      .nullable(),
     role: z
       .enum(['E', 'T'])
-      .optional(), // hacer opcional el role
+      .optional()
+      .nullable(), // hacer opcional el role
     careerId: z
       .number()
       .min(1, 'El id de carrera debe ser mínimo 1')
-      .optional(), // hacer opcional el careerId
+      .optional() // hacer opcional el careerId
+      .nullable(),
     items: z
       .array(answersSchema)
       .min(1, 'Es necesario tener al menos una respuesta')
