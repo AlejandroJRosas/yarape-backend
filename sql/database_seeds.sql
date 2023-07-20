@@ -237,8 +237,7 @@ INSERT INTO users (
   role,
   career_id
 ) VALUES
-  ('Jhonny Suarez', false, 6.78, null, null, null),
-  ('Jes·s Ortiz', true, 6.35, 1, 'E', 14);
+  ('Jhonny Suarez', false, 6.78, null, null, null);
 
 -- answers 🌱
 

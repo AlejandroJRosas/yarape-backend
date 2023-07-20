@@ -12,6 +12,6 @@ router.get('/surveyed-quantity', getSurveyedQuantity)
 router.get('/ucab-vs-non-ucab', getAvgUcabVsNonUcab)
 router.get('/avg-campus-vs', getAvgCampusVs)
 router.get('/avg-std-vs-wrk', getAvgStdVsWrk)
-router.get('/most-picked-options/:categoryId/:questionId', getMostPickedOptions)
+router.get('/most-picked-options', getMostPickedOptions)
 
 export default router

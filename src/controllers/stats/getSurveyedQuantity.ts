@@ -33,8 +33,7 @@ export const getSurveyedQuantity = async (
       ...responseCampus,
       {
         x: 'no pertenece a la ucab',
-        y:
-          Number(rows[0].count) -
+        y: Number(rows[0].count) -
           (Number(responseCampus[0].y) + Number(responseCampus[1].y))
       }
     ]
