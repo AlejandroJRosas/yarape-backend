@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { signIn } from '../../controllers/login.controller'
+import { signIn } from './login.controller'
 import { schemaGuard } from '../../middlewares/schemaGuard'
-import { loginSchema } from '../../schemas/login.schema'
+import { loginSchema } from './login.schema'
 
 const router = Router()
 

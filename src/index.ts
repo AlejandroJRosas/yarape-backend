@@ -3,7 +3,7 @@ import morgan from 'morgan'
 import cors from 'cors'
 
 import { PORT } from './config'
-import apiRouter from './routes'
+import apiRouter from './api/_routes'
 
 // App Declaration
 const app = express()

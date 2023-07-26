@@ -1,15 +1,15 @@
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
-import { pool } from '../database'
-import { DEFAULT_PAGE, STATUS } from '../utils/constants'
+import { pool } from '../../database'
+import { DEFAULT_PAGE, STATUS } from '../../utils/constants'
 import {
   PaginateSettings,
   paginatedItemsResponse
-} from '../utils/responses'
-import { StatusError } from '../utils/responses/status-error'
-import { handleControllerError } from '../utils/responses/handleControllerError'
-import { AUTH_ROUNDS } from '../config'
-import camelizeObject from '../utils/camelizeObject'
+} from '../../utils/responses'
+import { StatusError } from '../../utils/responses/status-error'
+import { handleControllerError } from '../../utils/responses/handleControllerError'
+import { AUTH_ROUNDS } from '../../config'
+import camelizeObject from '../../utils/camelizeObject'
 
 export const getAdmins = async (
   req: Request,

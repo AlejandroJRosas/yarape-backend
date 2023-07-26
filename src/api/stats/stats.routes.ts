@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import { getSurveyedQuantity } from '../../controllers/stats/getSurveyedQuantity'
-import { getAvgUcabVsNonUcab } from '../../controllers/stats/getAvgUcabVsNonUcab'
-import { getAvgCampusVs } from '../../controllers/stats/getAvgCampusVs'
-import { getAvgStdVsWrk } from '../../controllers/stats/getAvgStdVsWrk'
-import { getMostPickedOptions } from '../../controllers/stats/getMostPickedOptions'
+import { getSurveyedQuantity } from './getSurveyedQuantity.action'
+import { getAvgUcabVsNonUcab } from './getAvgUcabVsNonUcab.action'
+import { getAvgCampusVs } from './getAvgCampusVs.action'
+import { getAvgStdVsWrk } from './getAvgStdVsWrk.action'
+import { getMostPickedOptions } from './getMostPickedOptions.action'
 
 const router = Router()
 

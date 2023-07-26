@@ -5,9 +5,9 @@ import {
   addAdmin,
   updateAdmin,
   deleteAdmin
-} from '../../controllers/admins.controller'
+} from './admins.controller'
 import { schemaGuard } from '../../middlewares/schemaGuard'
-import { adminsSchema } from '../../schemas/admins.schema'
+import { adminsSchema } from './admins.schema'
 import { paginationGuard } from '../../middlewares/paginationGuard'
 import { tokenGuard } from '../../middlewares/tokenGuard'
 import { verifyToken } from '../../middlewares/auth'
