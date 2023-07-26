@@ -1,14 +1,14 @@
 import { Request, Response } from 'express'
-import { pool } from '../../database'
-import { DEFAULT_PAGE, STATUS } from '../../utils/constants'
+import { pool } from '../../../database'
+import { DEFAULT_PAGE, STATUS } from '../../../utils/constants'
 import {
   PaginateSettings,
   paginatedItemsResponse
-} from '../../utils/responses'
-import { handleControllerError } from '../../utils/responses/handleControllerError'
-import camelizeObject from '../../utils/camelizeObject'
+} from '../../../utils/responses'
+import { handleControllerError } from '../../../utils/responses/handleControllerError'
+import camelizeObject from '../../../utils/camelizeObject'
 
-export const getUsers = async (
+export const getAdmins = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
@@ -26,18 +26,20 @@ export const getUsers = async (
         SELECT 
           COUNT(*) 
         FROM 
-          users
+          admins
       `
     })
 
     const response = await pool.query({
       text: `
         SELECT 
-          *
+          admin_id, 
+          name, 
+          email 
         FROM 
-          users 
+          admins 
         ORDER BY 
-          user_id 
+          name 
         LIMIT 
           $1 OFFSET $2
       `,

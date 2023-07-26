@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import { pool } from '../../database'
-import { STATUS } from '../../utils/constants'
-import { handleControllerError } from '../../utils/responses/handleControllerError'
-import camelizeObject from '../../utils/camelizeObject'
-import { StatusError } from '../../utils/responses/status-error'
+import { pool } from '../../../database'
+import { STATUS } from '../../../utils/constants'
+import { handleControllerError } from '../../../utils/responses/handleControllerError'
+import camelizeObject from '../../../utils/camelizeObject'
+import { StatusError } from '../../../utils/responses/status-error'
 
 export const getUserById = async (
   req: Request,

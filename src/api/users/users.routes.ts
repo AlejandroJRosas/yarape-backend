@@ -4,10 +4,10 @@ import { usersSchema } from './users.schema'
 import { paginationGuard } from '../../middlewares/paginationGuard'
 import { tokenGuard } from '../../middlewares/tokenGuard'
 import { verifyToken } from '../../middlewares/auth'
-import { getUsers } from './get.action'
-import { getUserById } from './getById.action'
-import { addUser } from './add.action'
-import { deleteUser } from './delete.action'
+import { getUsers } from './actions/get.action'
+import { getUserById } from './actions/getById.action'
+import { addUser } from './actions/add.action'
+import { deleteUser } from './actions/delete.action'
 
 const router = Router()
 

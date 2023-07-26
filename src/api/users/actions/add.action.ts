@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import { pool } from '../../database'
-import { STATUS } from '../../utils/constants'
-import { handleControllerError } from '../../utils/responses/handleControllerError'
-import camelizeObject from '../../utils/camelizeObject'
-import { UserDataCreate } from './users.schema'
+import { pool } from '../../../database'
+import { STATUS } from '../../../utils/constants'
+import { handleControllerError } from '../../../utils/responses/handleControllerError'
+import camelizeObject from '../../../utils/camelizeObject'
+import { UserDataCreate } from '../users.schema'
 
 const getUsersDataFromRequestBody = async (req: Request): Promise<any[]> => {
   const {

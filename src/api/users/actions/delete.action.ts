@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
-import { pool } from '../../database'
-import { STATUS } from '../../utils/constants'
-import { handleControllerError } from '../../utils/responses/handleControllerError'
-import { StatusError } from '../../utils/responses/status-error'
+import { pool } from '../../../database'
+import { STATUS } from '../../../utils/constants'
+import { handleControllerError } from '../../../utils/responses/handleControllerError'
+import { StatusError } from '../../../utils/responses/status-error'
 
 export const deleteUser = async (
   req: Request,

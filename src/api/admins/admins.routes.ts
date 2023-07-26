@@ -1,16 +1,14 @@
 import { Router } from 'express'
-import {
-  getAdmins,
-  getAdminById,
-  addAdmin,
-  updateAdmin,
-  deleteAdmin
-} from './admins.controller'
 import { schemaGuard } from '../../middlewares/schemaGuard'
-import { adminsSchema } from './admins.schema'
 import { paginationGuard } from '../../middlewares/paginationGuard'
 import { tokenGuard } from '../../middlewares/tokenGuard'
 import { verifyToken } from '../../middlewares/auth'
+import { adminsSchema } from './admins.schema'
+import { getAdmins } from './actions/get.action'
+import { getAdminById } from './actions/getById.action'
+import { addAdmin } from './actions/add.action'
+import { updateAdmin } from './actions/update.action'
+import { deleteAdmin } from './actions/delete.action'
 
 const router = Router()
 

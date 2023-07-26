@@ -1,8 +1,8 @@
 import { Router } from 'express'
 import { getSurveyedQuantity } from './getSurveyedQuantity.action'
-import { getAvgUcabVsNonUcab } from './getAvgUcabVsNonUcab.action'
-import { getAvgCampusVs } from './getAvgCampusVs.action'
-import { getAvgStdVsWrk } from './getAvgStdVsWrk.action'
+import { getAvgUcabVsNonUcab } from './actions/getAvgUcabVsNonUcab.action'
+import { getAvgCampusVs } from './actions/getAvgCampusVs.action'
+import { getAvgStdVsWrk } from './actions/getAvgStdVsWrk.action'
 import { getMostPickedOptions } from './getMostPickedOptions.action'
 
 const router = Router()

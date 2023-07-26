@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
-import { pool } from '../../database'
-import { STATUS } from '../../utils/constants'
-import { handleControllerError } from '../../utils/responses/handleControllerError'
+import { pool } from '../../../database'
+import { STATUS } from '../../../utils/constants'
+import { handleControllerError } from '../../../utils/responses/handleControllerError'
 
 export const getMostPickedOptions = async (
   _: Request,
