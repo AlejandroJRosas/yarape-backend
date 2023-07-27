@@ -1,13 +1,13 @@
 import { Response, Request } from 'express'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import { pool } from '../../database'
-import { AUTH_EXPIRE, AUTH_SECRET } from '../../config'
-import { STATUS } from '../../utils/constants'
-import { Admin } from '../admins/admins.schema'
-import { StatusError } from '../../utils/responses/status-error'
-import { handleControllerError } from '../../utils/responses/handleControllerError'
-import camelizeObject from '../../utils/camelizeObject'
+import { pool } from '../../../database'
+import { AUTH_EXPIRE, AUTH_SECRET } from '../../../config'
+import { STATUS } from '../../../utils/constants'
+import { Admin } from '../../admins/admins.schema'
+import { StatusError } from '../../../utils/responses/status-error'
+import { handleControllerError } from '../../../utils/responses/handleControllerError'
+import camelizeObject from '../../../utils/camelizeObject'
 
 const getLoginDataFromRequestBody = (req: Request): any[] => {
   const { email, password } = req.body

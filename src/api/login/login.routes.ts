@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { signIn } from './login.controller'
+import { signIn } from './actions/signIn.action'
 import { schemaGuard } from '../../middlewares/schemaGuard'
 import { loginSchema } from './login.schema'
 
