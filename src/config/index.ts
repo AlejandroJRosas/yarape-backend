@@ -11,3 +11,4 @@ export const DBNAME = process.env.DBNAME
 export const DBUSER = process.env.DBUSER
 export const DBHOST = process.env.DBHOST
 export const DBPASSWORD = process.env.DBPASSWORD
+export const DATABASE_URL = process.env.DATABASE_URL
