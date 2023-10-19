@@ -54,7 +54,6 @@ export const addUser = async (
     })
     return res.status(STATUS.CREATED).json(camelizeObject(responseUser.rows[0]))
   } catch (error: unknown) {
-    console.log(error)
     return handleControllerError(error, res)
   }
 }

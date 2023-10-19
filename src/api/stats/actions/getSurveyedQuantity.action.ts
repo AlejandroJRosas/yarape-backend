@@ -21,10 +21,10 @@ export const getSurveyedQuantity = async (
       text: `
         SELECT
           c.name AS x,
-          COALESCE(COUNT(*), 0) AS y
+          COUNT(CASE WHEN c.campus_id IN (u.campus_id) THEN 1 ELSE NULL END) AS y
         FROM 
           campus AS c
-        INNER JOIN users AS u ON c.campus_id = u.campus_id
+        LEFT JOIN users AS u ON c.campus_id = u.campus_id
         GROUP BY x
       `
     })
